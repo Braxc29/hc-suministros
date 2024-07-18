@@ -1,10 +1,20 @@
-import React from 'react'
-import CardsWrapper from "../../src/components/service/CardsWrapper"
+import React from "react";
+import CardsContainer from "../components/service/CardsContainer";
+import Cards from "../components/service/Cards";
+import data from "../data/cards.json";
 
-const Servicios = () => {
+export default function Servicios() {
   return (
-    <CardsWrapper />
-  )
+    <>
+      <CardsContainer>
+        {data.map((card) => (
+          <Cards
+            image={card.image}
+            name={card.name}
+            description={card.description}
+          />
+        ))}
+      </CardsContainer>
+    </>
+  );
 }
-
-export default Servicios
